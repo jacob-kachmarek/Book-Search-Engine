@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import {
-  Jumbotron,
+  // Jumbotron,
   Container,
   Col,
   Form,
   Button,
   Card,
-  CardColumns,
+  // CardColumns,
 } from "react-bootstrap";
 
 import Auth from "../utils/auth";
@@ -91,7 +91,7 @@ const SearchBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <div fluid className="text-light bg-dark">
         <Container>
           <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -114,7 +114,7 @@ const SearchBooks = () => {
             </Form.Row>
           </Form>
         </Container>
-      </Jumbotron>
+      </div>
 
       <Container>
         <h2>
@@ -122,7 +122,7 @@ const SearchBooks = () => {
             ? `Viewing ${searchedBooks.length} results:`
             : "Search for a book to begin"}
         </h2>
-        <CardColumns>
+        <div>
           {searchedBooks.map((book) => {
             return (
               <Card key={book.bookId} border="dark">
@@ -156,7 +156,7 @@ const SearchBooks = () => {
               </Card>
             );
           })}
-        </CardColumns>
+        </div>
       </Container>
     </>
   );
